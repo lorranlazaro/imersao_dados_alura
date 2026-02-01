@@ -50,7 +50,7 @@ df_filtrado = df[
 # Conteúdo
 st.title("📊 Dashboard de Análise de Salários na Área de Dados")
 st.markdown(
-    "Faça uma análise dos salários na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise."
+    "Faça uma análise dos salários na área de dados nos últimos anos. Utilize os filtros da Barra Lateral para personalizar sua consulta."
 )
 
 # Métricas Principais
