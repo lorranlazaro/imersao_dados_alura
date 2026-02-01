@@ -50,11 +50,11 @@ df_filtrado = df[
 # Conteúdo
 st.title("📊 Dashboard de Análise de Salários na Área de Dados")
 st.markdown(
-    "Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise."
+    "Faça uma análise dos salários na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise."
 )
 
 # Métricas Principais
-st.subheader("Métricas gerais (Salário anual em USD)")
+st.subheader("Métricas Gerais (Salário Anual em USD)")
 
 if not df_filtrado.empty:
     salario_medio = df_filtrado["usd"].mean()
@@ -123,8 +123,8 @@ with col_graf1:
             x="usd",
             y="cargo",
             orientation="h",
-            title="Top 10 cargos por salário médio",
-            labels={"usd": "Média salarial anual (USD)", "cargo": ""},
+            title="Top 10 Cargos por Salário Médio",
+            labels={"usd": "Média Salarial Anual (USD)", "cargo": ""},
         )
         grafico_cargos.update_layout(
             title_x=0.1, yaxis={"categoryorder": "total ascending"}
@@ -139,8 +139,8 @@ with col_graf2:
             df_filtrado,
             x="usd",
             nbins=30,
-            title="Distribuição de salários anuais",
-            labels={"usd": "Faixa salarial (USD)", "count": ""},
+            title="Distribuição Anual de Salários",
+            labels={"usd": "Faixa Salarial (USD)", "count": ""},
         )
         grafico_hist.update_layout(title_x=0.1)
         st.plotly_chart(grafico_hist, use_container_width=True)
@@ -157,7 +157,7 @@ with col_graf3:
             remoto_contagem,
             names="tipo_trabalho",
             values="quantidade",
-            title="Proporção dos tipos de trabalho",
+            title="Proporção dos Tipos de Trabalho",
             hole=0.5,
         )
         grafico_remoto.update_traces(textinfo="percent+label")
@@ -175,8 +175,8 @@ with col_graf4:
             locations="residencia_iso3",
             color="usd",
             color_continuous_scale="rdylgn",
-            title="Salário médio de Cientista de Dados por país",
-            labels={"usd": "Salário médio (USD)", "residencia_iso3": "País"},
+            title="Salário Médio de Cientistas de Dados por País",
+            labels={"usd": "Salário Médio (USD)", "residencia_iso3": "País"},
         )
         grafico_paises.update_layout(title_x=0.1)
         st.plotly_chart(grafico_paises, use_container_width=True)
